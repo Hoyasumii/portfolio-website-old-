@@ -1,0 +1,27 @@
+@import "@/styles/variables.scss";
+
+.navbar {
+  @apply flex gap-4;
+
+  &__item {
+    text-decoration: underline;
+    text-decoration-color: nth($palette, 3);
+    transition: all ease-in-out 300ms;
+
+    &:not(.disabled):hover, &.active {
+      text-decoration-color: $accentColor;
+      cursor: pointer;
+    }
+
+    &:not(.disabled):active, &.active:active {
+      filter: brightness(1.2);
+    }
+
+    &.disabled {
+      cursor: none;
+      pointer-events: none;
+      user-select: none;
+      filter: brightness(0.8);
+    }
+  }
+}

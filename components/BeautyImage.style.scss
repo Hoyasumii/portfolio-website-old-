@@ -1,0 +1,26 @@
+.beauty-image {
+  padding: 1px;
+  aspect-ratio: 16/9;
+  position: relative;
+  overflow: hidden;
+  @apply rounded-lg;
+
+  &__background {
+    height: 100%;
+    aspect-ratio: 16/9;
+    object-fit: fill;
+    filter: blur(15px);
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  &__content {
+    height: 100%;
+    position: absolute;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    top: 0;
+  }
+}

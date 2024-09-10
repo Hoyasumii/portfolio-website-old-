@@ -1,0 +1,8 @@
+.header {
+  @apply md:px-8 px-4 py-3 flex justify-between items-center w-full sticky top-0 bg-inherit;
+
+  &__title {
+    font-size: 1.2rem;
+    @apply font-bold select-none;
+  }
+}

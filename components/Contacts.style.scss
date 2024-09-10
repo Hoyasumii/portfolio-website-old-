@@ -1,0 +1,28 @@
+@import "@/styles/variables";
+
+.contacts {
+  @apply flex gap-2;
+
+  & a {
+    font-size: 1.2rem;
+    transition: all ease-in-out 300ms;
+
+    &:hover {
+      color: $accentColor;
+    }
+
+    &:active {
+      filter: brightness(1.2);
+    }
+
+    & svg, & svg path {
+      color: inherit
+    }
+  }
+}
+
+@media (orientation: portrait) {
+  .contacts * {
+    font-size: 1.4rem;
+  }
+}

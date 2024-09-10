@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./variables.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Inika&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  @apply m-0 p-0 box-border;
+  font-family: "PT Serif", serif;
+  color: $fontColor;
+}
+
+html,
+body {
+  background-color: nth($palette, 3);
+  min-height: 100dvh;
+  max-height: 100dvh;
+}
+
+body {
+  @apply flex flex-col;
+}
+
+:root {
+  background-color: nth($palette, 3);
+  font-size: 16pt;
+}
+
+@media (orientation: portrait) {
+  :root {
+    font-size: 14pt;
+  }
+}
+
+::-webkit-scrollbar {
+  background-color: nth($palette, 3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: nth($palette, 4);
+  border-radius: 50px;
+  border: 0.2rem solid nth($palette, 3);
+  transition: all ease 300ms;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: nth($palette, 5);
+}
+
+.content {
+  @apply flex-1 flex flex-col gap-3;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 100%;
+  padding: 0.5rem;
+
+  &__grid {
+    flex: 1;
+    overflow: hidden;
+    overflow-y: scroll;
+    min-height: fit-content;
+    max-height: 100%;
+    @apply grid grid-cols-1 xl:grid-cols-2 items-start place-content-start;
+
+    &__container {
+      @extend .content__container;
+      @apply col-span-2;
+    }
+  }
+
+  &__container {
+    background-color: nth($palette, 4);
+    box-shadow: 0 0 5px rgba(nth($palette, 2), 0.3);
+    @apply self-center flex flex-col py-3 px-8 rounded-lg;
+    width: 100%;
+  }
+
+  &__text {
+    @apply text-center;
+  }
+
+  &__grid {
+    @apply gap-6;
+  }
+}
+
+p {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 0.5rem 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding: 0.5rem 8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1444px) {
+  .content {
+    padding: 0.5rem 18rem;
+  }
+}

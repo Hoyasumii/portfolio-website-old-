@@ -1,0 +1,47 @@
+@import "@/styles/variables";
+
+.card {
+  background-color: nth($palette, 4);
+  box-shadow: 0 0 5px rgba(nth($palette, 2), .4);
+  transition: all ease-in-out 200ms;
+  position: relative;
+
+  @apply rounded-lg flex flex-col;
+
+  &:hover {
+    transform: scale(1.025);
+  }
+  
+  &:active {
+    transform: scale(1.0125);
+  }
+
+  &__cover {
+    overflow: hidden;
+  }
+
+  &__content {
+    @apply p-5 flex flex-col absolute bottom-0 rounded-b-lg;
+    background-color: rgba(nth($palette, 2), .8);
+    min-width: 100%;
+    z-index: 1;
+
+    &__title {
+      @apply font-bold;
+      font-size: 1.1rem;
+    }
+
+    &__description {
+      @apply text-stone-300;
+      width: 100%;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+      font-size: 0.8rem;
+    }
+
+    &__date {
+      @apply text-stone-400;
+      font-size: .6rem;
+    }
+  }
+}

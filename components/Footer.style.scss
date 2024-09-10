@@ -1,0 +1,8 @@
+.footer {
+  @apply flex justify-center font-thin py-2;
+  font-size: .7rem;
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+}
